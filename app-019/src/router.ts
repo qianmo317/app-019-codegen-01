@@ -7,11 +7,16 @@ export type Route =
   | { name: 'editor'; id: string }
   | { name: 'print'; id: string }
   | { name: 'library' }
+  | { name: 'nesting' }
+  | { name: 'nesting-batch'; id: string }
 
 export function parseHash(hash: string): Route {
   const h = hash.replace(/^#/, '')
   if (h === '/new') return { name: 'new' }
   if (h === '/library') return { name: 'library' }
+  if (h === '/nesting') return { name: 'nesting' }
+  const mn = h.match(/^\/nesting\/([^/]+)$/)
+  if (mn) return { name: 'nesting-batch', id: decodeURIComponent(mn[1]) }
   const m = h.match(/^\/plan\/([^/]+)\/print$/)
   if (m) return { name: 'print', id: decodeURIComponent(m[1]) }
   const m2 = h.match(/^\/plan\/([^/]+)$/)

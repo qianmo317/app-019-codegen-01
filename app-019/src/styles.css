@@ -146,3 +146,58 @@ input[type="number"] { width: 90px; text-align: right; }
   .page { max-width: none; padding: 0; }
   .print-section { page-break-inside: avoid; }
 }
+
+/* ===== 开料排料 ===== */
+.nesting-page h2 { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.nest-hint { color: #888; font-size: 12px; font-weight: 400; }
+.nest-title-input { width: 200px !important; }
+.nest-saved-bar { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 10px 0; font-size: 13px; color: #666; }
+.nest-saved-chip { display: inline-flex; align-items: center; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); overflow: hidden; }
+.nest-chip-link { border: none; background: none; padding: 2px 10px; cursor: pointer; color: var(--ink); font-size: 12px; }
+.nest-chip-link.active { font-weight: 700; }
+.nest-chip-del { border: none; border-left: 1px solid var(--line); background: none; padding: 2px 8px; cursor: pointer; color: #a33; }
+
+.nest-layout { display: grid; grid-template-columns: minmax(340px, 460px) 1fr; gap: 16px; align-items: start; margin-top: 12px; }
+@media (max-width: 1100px) { .nest-layout { grid-template-columns: 1fr; } }
+.nest-inputs { display: flex; flex-direction: column; gap: 12px; }
+.nest-results { display: flex; flex-direction: column; gap: 12px; position: sticky; top: 60px; max-height: calc(100vh - 72px); overflow-y: auto; padding-right: 4px; }
+@media (max-width: 1100px) { .nest-results { position: static; max-height: none; } }
+.nest-card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; }
+.nest-table { border-collapse: collapse; width: 100%; margin: 6px 0; }
+.nest-table th, .nest-table td { border: 1px solid var(--line); padding: 3px 6px; font-size: 13px; text-align: right; }
+.nest-table th { background: var(--bg); font-weight: 600; }
+.nest-table td:first-child, .nest-table th:first-child { text-align: left; }
+.nest-table input[type="number"] { width: 76px; padding: 2px 4px; }
+.nest-name-input { width: 100%; min-width: 90px; text-align: left !important; }
+.nest-presets { display: flex; flex-wrap: wrap; gap: 6px; margin: 6px 0; }
+.nest-settings { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px 14px; }
+.nest-settings label { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: #555; }
+.nest-settings .nest-check { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 8px; }
+
+.nest-summary .nest-stat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 8px 0; }
+.nest-stat { background: var(--bg); border-radius: 6px; padding: 8px; text-align: center; }
+.nest-stat strong { display: block; font-size: 20px; }
+.nest-stat span { font-size: 12px; color: #777; }
+.stat-bad { color: #a33; }
+.stat-ok { color: var(--ok); }
+.nest-export-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+.nest-purchase-table { margin: 8px 0; }
+
+.nest-sheet-body { display: grid; grid-template-columns: minmax(220px, 1.2fr) minmax(240px, 1fr); gap: 12px; }
+@media (max-width: 800px) { .nest-sheet-body { grid-template-columns: 1fr; } }
+.nest-svg { width: 100%; height: auto; background: #fff; border: 1px solid var(--line); }
+.nest-board { fill: #fbfaf7; stroke: var(--ink); stroke-width: 1.2; }
+.nest-grain line { stroke: #dcd7cc; stroke-width: 0.4; }
+.nest-piece rect { fill: #eef3f7; stroke: var(--ink); stroke-width: 0.7; }
+.nest-piece-label { font-size: 9px; fill: #333; text-shadow: 0 0 2px #fff; }
+.nest-piece-rotated rect { fill: #fbe8d6; stroke: var(--warn); stroke-width: 1; }
+.nest-piece-mark { font-size: 8px; fill: var(--warn); font-weight: 700; }
+.nest-remnant rect { fill: none; stroke: var(--ok); stroke-width: 0.6; stroke-dasharray: 3 2; }
+.nest-remnant-text { font-size: 8px; fill: var(--ok); }
+.nest-board-label { font-size: 10px; fill: #555; }
+.nest-sheet-side .tooth-table td { font-size: 12px; }
+.row-rotated { background: #fdf3e7; }
+.nest-remnant-list { margin-top: 8px; font-size: 13px; }
+.nest-remnant-list ul { margin: 4px 0; padding-left: 20px; }
+.nest-unplaced h2 { color: #a33; }
+.nest-reason { text-align: left !important; color: #8a5a5a; font-size: 12px; }
